@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Simple template</title>
+    <script src="sum.js"></script>
+</head>
+<body>
+<script>
+  Module.onRuntimeInitialized = () => {
+    const Sum = Module.cwrap('Sum', 'number', ['number', 'number']);
+    if (!Sum) {
+      console.error("Sum is not defined yet");
+      return;
+    }
+    console.log('Sum:', Sum);
+    console.log(Sum(5, 5));
+    console.log(Sum(0, 45));
+  };
+</script>
+</body>
+</html>

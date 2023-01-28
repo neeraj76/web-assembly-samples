@@ -1,0 +1,17 @@
+{
+  "name": "webassembly-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sum.js",
+  "scripts": {
+    "build:wasm": "em++ -std=c++11 sum.cpp -o sum.js -s EXTRA_EXPORTED_RUNTIME_METHODS='[\"ccall\", \"cwrap\"]' -s EXPORTED_FUNCTIONS=\"['_Sum']\" ",
+    "start": "http-server ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
